@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 设置 /var/www/html 的权限
-chown -R www-data:www-data /var/www/html
+# chown -R www-data:www-data /var/www/html
 
 # 启动 Apache
 echo "Starting Apache..."

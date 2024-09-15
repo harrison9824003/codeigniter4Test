@@ -2,11 +2,15 @@ version: '3.8'
 
 services:
   web:
+    image: codeigniter4_test
     build: .
     ports:
       - "80:80"
-    # volumes:
-    #   - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+    volumes:
+      - ./apache-vhost.conf:/etc/apache2/sites-available/000-default.conf
+      # - ./.dockerConfig/start.sh:/start.sh
+      # - ./var/www/html:/var/www/html
+      # - ./.dockerConfig/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
     environment:
       - VIRTUAL_HOST=localhost
     depends_on:

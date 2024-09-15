@@ -1,5 +1,5 @@
 # docker image name
-IMAGE_NAME=codeigniter4_template
+IMAGE_NAME=codeigniter4_test
 
 # docker build image
 .PHONY: build
@@ -15,3 +15,8 @@ up: down
 .PHONY: down
 down:
 	docker compose down
+
+# docker image rebuild
+.PHONY: rebuild
+rebuild: down
+	docker compose up --build -d
